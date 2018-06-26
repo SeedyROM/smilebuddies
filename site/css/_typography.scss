@@ -1,0 +1,44 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
+@import url('https://fonts.googleapis.com/css?family=Jaldi:400,700|Open+Sans:400,700,700i|Roboto+Mono|Varela+Round');
+
+@import 'globals';
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+    
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+h1 {  
+    font-size: $mobile-mod*$mobile-mod*$mobile-mod*$mobile-mod *1rem; 
+    @include fluid-type($min-screen-width, $max-screen-width, $mobile-mod*$mobile-mod*$mobile-mod *$min-font-size, $desktop-mod*$desktop-mod*$desktop-mod *$min-font-size);
+}
+h2 {  
+    font-size: $mobile-mod*$mobile-mod*$mobile-mod *1rem; 
+    @include fluid-type($min-screen-width, $max-screen-width, $mobile-mod*$mobile-mod*$mobile-mod *$min-font-size, $desktop-mod*$desktop-mod*$desktop-mod *$min-font-size);
+}
+h3 { 
+    font-size: $mobile-mod*$mobile-mod *1rem;
+    @include fluid-type($min-screen-width, $max-screen-width, $mobile-mod*$mobile-mod *$min-font-size, $desktop-mod*$desktop-mod *$min-font-size);
+}
+
+h1.cling {
+    margin-top: 0px;
+}

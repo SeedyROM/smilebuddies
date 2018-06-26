@@ -1,0 +1,61 @@
+@import 'globals';
+@import 'typography';
+@import 'transitions';
+
+$content-padding: 2em;
+
+html, body {
+    min-width: $min-screen-width;
+}
+
+body {
+    background: $brand-mellow-color;
+    font-family: "Varela Round", sans-serif;
+    color: darken($brand-background-color, 10%);
+}
+
+.container {
+    display: flex;
+    &.center { 
+        justify-content: center;
+    }
+    &.columns {
+        flex-direction: column;
+    }
+}
+
+#content {
+    padding: $content-padding;
+}
+
+#header {
+    background: $brand-background-color;
+    padding: 1em 2em;
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        @include fluid-type($min-screen-width, $max-screen-width, 15px, 27px);
+
+        font-family: Jaldi;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-top: 0.5px;
+        color: #f3f3f3;
+    }
+
+    .notifications {
+        @include fluid-type($min-screen-width, $max-screen-width, 15px, 26px);        
+        color: #f3f3f3;
+        line-height: 1;
+        cursor: pointer;
+    }
+}
