@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="hero">
+    <h1 class="cling">Welcome to SmileBuddies.lol!</h1>
+    <div class="text">
+        Haha, hope you have fun!
+    </div>
+</div>
+{% endblock content %}
+{% block scripts %}
+<script>
+    new Vue({
+        el: '#hero',
+        delimiters: ['[[', ']]'],
+    })
+</script>
+{% endblock scripts %}

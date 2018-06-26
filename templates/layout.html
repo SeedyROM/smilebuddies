@@ -1,0 +1,30 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% sass_src "css/site.scss" %}"/>
+    {% block stylesheets %}{% endblock stylesheets %}
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div class="container">
+                <a href="{% url "landing" %}"><div class="logo">SmileBuddies</div></a>
+                <div class="notifications">😊</div>
+            </div>
+        </div>
+        <div id="content" class="container column center">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    {% block vue %}{% endblock vue %}
+    <script src="{% static "js/site.js" %}"></script>
+    {% block scripts %}{% endblock scripts %}
+</body>
+</html>
