@@ -6,6 +6,11 @@
 
     a {
         text-decoration: none;
+        font-size: 0.75em;
+
+        &:visited, &:hover, &:active {
+            color: #f3f3f3;
+        }
     }
 
     .container {
@@ -29,8 +34,8 @@
         color: #f3f3f3;
     }
 
-    .notifications {
-        @include fluid-type($min-screen-width, $max-screen-width, 15px, 26px);        
+    .navigation {
+        @include fluid-type($min-screen-width, $max-screen-width, 13px, 20px);        
         color: #f3f3f3;
         line-height: 1;
         cursor: pointer;

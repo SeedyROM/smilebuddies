@@ -145,3 +145,7 @@ STATICFILES_FINDERS = [
 
 MEDIA_URL = '/content/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Account Settings
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard'
