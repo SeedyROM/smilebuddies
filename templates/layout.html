@@ -14,8 +14,10 @@
     <div id="page">
         <div id="header">
             <div class="container">
-                <a href="{% url "landing" %}"><div class="logo">SmileBuddies</div></a>
-                <div class="notifications">😊</div>
+                <div class="fit">
+                    <a href="{% url "landing" %}"><div class="logo">SmileBuddies</div></a>
+                    <div class="notifications">😊</div>
+                </div>
             </div>
         </div>
         <div id="content" class="container column center">
@@ -23,7 +25,6 @@
         </div>
     </div>
     <script src="https://unpkg.com/vue"></script>
-    {% block vue %}{% endblock vue %}
     <script src="{% static "js/site.js" %}"></script>
     {% block scripts %}{% endblock scripts %}
 </body>

@@ -1,0 +1,42 @@
+@import 'globals';
+
+#header {
+    background: $brand-background-color;
+    padding: $content-padding / 2 $content-padding;
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        justify-content: center;
+    }
+
+    .fit {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+    }
+
+    .logo {
+        @include fluid-type($min-screen-width, $max-screen-width, 15px, 27px);
+
+        font-family: Jaldi;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-top: 0.5px;
+        color: #f3f3f3;
+    }
+
+    .notifications {
+        @include fluid-type($min-screen-width, $max-screen-width, 15px, 26px);        
+        color: #f3f3f3;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        padding: $content-padding / 4 $content-padding / 2;
+    }
+}
